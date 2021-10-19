@@ -21,10 +21,12 @@ app.use(morgan("dev"));
 // Require & Import API routes
 const users = require('./routes/users')
 const dojos = require('./routes/dojos')
+const upload = require('./routes/upload')
 
 // Use API Routes
 app.use(users)
 app.use(dojos)
+app.use(upload)
 
 app.get('/', (req, res) => {
     res.json("Hello World!");
