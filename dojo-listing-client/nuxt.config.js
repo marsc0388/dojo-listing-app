@@ -1,4 +1,6 @@
-export default {
+module.exports = {
+
+  mode: 'universal',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'dojo-listing-client',
@@ -33,6 +35,9 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios', // enables Nuxt Axios module
+    '@nuxtjs/auth-next', // enables Nuxt Auth module
+    'bootstrap-vue/nuxt'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -41,5 +46,36 @@ export default {
 
   serverMiddleware: [
     '~/api/index.js'
-  ]
+  ],
+
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          //API endpoints
+          login: {
+            url: '/api/users/login',
+            method: 'post',
+            propertyName: 'token'
+          },
+          logout: true,
+          user: {
+            url: '/api/users/user',
+            method: 'get',
+            propertyName: 'user'
+          }
+        },
+        tokenRequired: true,
+        tokenType: "Bearer"
+      }
+    },
+    redirect: {
+      login: '/user/login',
+      logout: '/',
+      home: '/'
+    },
+    rewriteRedirects: true,
+  },
+
+  ssr: true
 }
