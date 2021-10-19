@@ -4,7 +4,7 @@
             <!-- <b-navbar-brand href="#">Dojos</b-navbar-brand> -->
             <b-navbar-nav>
                 <b-nav-item to="/">Home</b-nav-item>
-                <b-nav-item to="/dojos">Dojos</b-nav-item>
+                <b-nav-item to="/dojos/dojos">Dojos</b-nav-item>
                 
             </b-navbar-nav>
                  <!-- Todo make this conditional on auth value -->

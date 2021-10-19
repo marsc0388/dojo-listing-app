@@ -76,6 +76,5 @@ module.exports = {
     },
     rewriteRedirects: true,
   },
-
-  ssr: true
+  ssr: true,
 }
