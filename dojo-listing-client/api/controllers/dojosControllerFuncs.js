@@ -5,7 +5,7 @@ async function getAllDojos() {
         return await Dojo.find({});
     }
     catch(err) {
-        return err
+        throw err
     }
 }
 
@@ -14,7 +14,7 @@ async function getDojo(id) {
         return await Dojo.findOne({_id, id});
     }
     catch(err) {
-        return err
+        throw err
     }
 }
 
@@ -24,7 +24,7 @@ async function createDojo(dojoObject) {
         return await createdDojo.save();
     }
     catch(err) {
-        return err;
+        throw err;
     }
 }
  
