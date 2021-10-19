@@ -1,10 +1,10 @@
-const config = require('../config')
+const {config, isAuthenticated } = require('../config')
 const { Router } = require('express')
 
 const router = Router()
 
 // Initialize Controller
-const dojosController = require('../controllers/dojosController')
+const dojosController = require('../controllers/dojosController');
 
 // Get all
 router.get('/dojos', dojosController.list)
@@ -15,5 +15,9 @@ router.get('/dojos', dojosController.list)
 // });
 // Get one
 router.get('/dojos/:id', dojosController.show)
+
+// Create
+router.post('/dojos', isAuthenticated, dojosController.create);
+
 
 module.exports = router;
