@@ -1,6 +1,6 @@
 <template>
     <div>
-            <b-card
+        <b-card
         title="Profile"
         img-src="https://picsum.photos/600/300/?image=25"
         img-alt="Image"

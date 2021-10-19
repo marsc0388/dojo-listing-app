@@ -1,10 +1,9 @@
 <template>
     <div>
-        <Navbar/>
-        <h1>Login</h1>
+        <h1>Welcome back!</h1>
         <hr>
-
-        <b-form @submit="submitForm">
+        <Notification :message="errors" v-if="errors"/>
+        <b-form @submit.prevent="login">
             <b-form-group
             id="input-email"
             label="Email address:"
@@ -24,20 +23,30 @@
             label="Password:"
             label-for="text-password"
             >
-                <b-form-input type="password" id="text-password" aria-describedby="password-help-block"></b-form-input>
+                <b-form-input type="password" id="text-password" aria-describedby="password-help-block" v-model="password"></b-form-input>
                 <b-form-text id="password-help-block">
                     Your password must be 8-20 characters long, contain letters and numbers, and must not
                     contain spaces, special characters, or emoji.
                 </b-form-text>
             </b-form-group>
+            <b-button type="submit" variant="primary">Submit</b-button>
         </b-form>
+        
+
+        <p>
+              Don't have an account? <nuxt-link to="/users/register">Register</nuxt-link>
+            </p>
     </div>
 </template>
 
 <script>
+import Notification from '../../components/Notification.vue'
     export default {
         middleware: 'auth',
         auth: 'guest',
+        components: {
+            Notification,
+        },
         data() {
             return {
                 errors:null,
@@ -48,19 +57,24 @@
             }
         },
         methods: {
-            submitForm(){
-                this.$auth.loginWith('local', {
+            async login(){
+                try {
+                    console.log("Login attempted!")
+                    await this.$auth.loginWith('local', {
                     data: {
                         email: this.email,
-                        password: thispassword
+                        password: this.password
                     }
                 })
-                .catch( error => {
-                    console.log(error);
-                    if(error.response.data.message) {
-                        this.login_error = error.response.data.message
+
+                this.$router.push('/')
+                }
+                catch(err) {
+                    console.log(err);
+                    if(err.response.data.message) {
+                        this.login_error = err.response.data.message
                     }
-                })
+                }
             }
         }
     }

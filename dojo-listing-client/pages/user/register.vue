@@ -1,14 +1,14 @@
 <template>
     <div>
-        <Navbar/>
-        <b-form @submit.prevent="submitForm()">
+        <Notification :message="errors" v-if="errors"/>
+        <b-form @submit.prevent="submitForm()" @reset="onReset">
             <b-form-group
             label="Full Name"
             label-for="fullName"
             description="First Name and Last name">
                 <b-form-input
                 id="fullName"
-                v-model="full_Name"
+                v-model="full_name"
                 type="text"
                 placeholder="Enter your full name">
                 </b-form-input>
@@ -28,13 +28,22 @@
             description="User password">
                 <b-form-input id="password" type="password" v-model="password"></b-form-input>
             </b-form-group>
+            <b-button type="submit" variant="primary">Submit</b-button>
         </b-form>
+
+        <div class="has-text-centered" style="margin-top: 20px">
+            Already got an account? <nuxt-link to="/users/login">Login</nuxt-link>
+          </div>
     </div>
 </template>
 <script>
+import Notification from '../../components/Notification.vue'
     export default {
         middleware: 'auth',
         auth: 'guest',
+        components: {
+            Notification
+        },
         data(){
             return {
                 errors:null,
@@ -47,10 +56,11 @@
         methods:{
             submitForm(){
                 // Post to register method
+                console.log(this.full_name , this.email, this.password);
                 this.$axios.post('/api/users/register', {
                     full_name: this.full_name,
                     email: this.email,
-                    password: this.password,
+                    password: this.password
                 })
                 .then((res) => {
                     console.log(res)
@@ -73,6 +83,13 @@
                         this.errors = error.response.data.errors
                     }
                 })
+            },
+            onReset(event) {
+                event.preventDefault()
+
+                this.full_name = null
+                this.email = null
+                this.password = null
             }
         }
     }

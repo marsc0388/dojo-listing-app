@@ -10,8 +10,16 @@
 <script>
 export default {
   middleware: 'auth',
-  async asyncData(context){
-    await context.$auth.logout()
+  mounted() {
+    this.logout()
   },
+  methods: {
+    async logout() {
+      await this.$auth.logout();
+    }
+  }
+  // async asyncData(context){
+  //   await context.$auth.logout()
+  // },
 }
 </script>

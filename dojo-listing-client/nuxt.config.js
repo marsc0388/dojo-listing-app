@@ -58,7 +58,7 @@ module.exports = {
             method: 'post',
             propertyName: 'token'
           },
-          logout: true,
+          logout: false,
           user: {
             url: '/api/users/user',
             method: 'get',
