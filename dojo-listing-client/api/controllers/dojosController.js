@@ -7,7 +7,7 @@ const list =  async function(req, res, next) {
 
     try {
         const dojos = await getAllDojos();
-        return res.json(data.dojos);
+        return res.json(dojos);
     }
     catch(err) {
         return res.status(500).json({
@@ -22,7 +22,7 @@ const show = async function(req, res) {
 
     try {
         const dojo = await getDojo(id);
-        return res.json(data.dojo);
+        return res.json(dojo);
     }
     catch(err) {
         return res.status(500).json({
