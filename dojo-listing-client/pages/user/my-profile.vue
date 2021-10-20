@@ -1,5 +1,19 @@
 <template>
     <div>
+        <b-jumbotron bg-variant="info" text-variant="white" border-variant="dark">
+    <template #header>Hi {{this.$auth.user.full_name}}</template>
+
+    <template #lead>
+      {{this.$auth.user.email}}
+    </template>
+
+    <hr class="my-4">
+
+    <p>
+      It uses utility classes for typography and spacing to space content out within the larger
+      container.
+    </p>
+  </b-jumbotron>
         <b-card
         title="Profile"
         img-src="https://picsum.photos/600/300/?image=25"
@@ -10,8 +24,8 @@
         class="mb-2"
     >
     <b-card-body>
-        <h4>{{this.$auth.user.full_name}}</h4>
-        <h4>{{this.$auth.user.email}}</h4>
+        <h4></h4>
+        <h4></h4>
         <nuxt-link to="/user/logout">Logout</nuxt-link>
     </b-card-body>
         <b-card-text>
