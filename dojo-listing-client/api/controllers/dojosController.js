@@ -4,7 +4,6 @@ const { getAllDojos, getDojo, createDojo } = require('./dojosControllerFuncs')
 
 // Get all dojos
 const list =  async function(req, res, next) {
-
     try {
         const dojos = await getAllDojos();
         return res.json(dojos);
@@ -19,12 +18,12 @@ const list =  async function(req, res, next) {
 // Get one dojo
 const show = async function(req, res) {
     const id = req.params.id;
-
     try {
         const dojo = await getDojo(id);
         return res.json(dojo);
     }
     catch(err) {
+        console.log(err);
         return res.status(500).json({
             message: 'Error getting dojo!'
         });
@@ -47,6 +46,7 @@ const create = async function(req, res) {
         });
     }
     catch (err) {
+        console.log(err);
         return res.status(500).json({
             message: 'Error creating dojo!'
         });

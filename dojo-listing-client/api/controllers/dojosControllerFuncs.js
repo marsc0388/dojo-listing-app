@@ -1,4 +1,5 @@
 const Dojo = require("../models/Dojo");
+const ObjectId = require('mongodb').ObjectID;
 
 async function getAllDojos() {
     try {
@@ -11,7 +12,7 @@ async function getAllDojos() {
 
 async function getDojo(id) {
     try {
-        return await Dojo.findOne({_id, id});
+        return await Dojo.findOne({ _id: ObjectId(id)});
     }
     catch(err) {
         throw err

@@ -46,7 +46,7 @@ export default {
             title: this.title,
             kanchou: this.kanchou,
             })
-
+      
             this.file1.metadata = await this.$axios.$get(`/api/dojos/${dojo._id}`)
             await this.$axios.post('/api/upload', this.file1);
             await this.$router.push("/dojos/dojos");
@@ -55,7 +55,7 @@ export default {
             console.log(error);
           }
           finally {
-            console.log(file1);
+            console.log(this.file1);
           }
         }
     }
