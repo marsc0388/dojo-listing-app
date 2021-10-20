@@ -1,39 +1,41 @@
 <template>
     <div>
         <Notification :message="errors" v-if="errors"/>
-        <b-form @submit.prevent="submitForm()" @reset="onReset">
-            <b-form-group
-            label="Full Name"
-            label-for="fullName"
-            description="First Name and Last name">
-                <b-form-input
-                id="fullName"
-                v-model="full_name"
-                type="text"
-                placeholder="Enter your full name">
-                </b-form-input>
-            </b-form-group>
+        <b-container>
+            <b-form class="mt-3" @submit.prevent="submitForm()" @reset="onReset" >
+                <b-form-group
+                label="Full Name"
+                label-for="fullName"
+                description="First Name and Last name">
+                    <b-form-input
+                    id="fullName"
+                    v-model="full_name"
+                    type="text"
+                    placeholder="Enter your full name">
+                    </b-form-input>
+                </b-form-group>
 
-            <b-form-group
-            label="Email"
-            label-for="email"
-            description="User email"
-            >
-                <b-form-input type="email" v-model="email"></b-form-input>
-            </b-form-group>
-            
-            <b-form-group
-            label="Password"
-            label-for="password"
-            description="User password">
-                <b-form-input id="password" type="password" v-model="password"></b-form-input>
-            </b-form-group>
-            <b-button type="submit" variant="primary">Submit</b-button>
-        </b-form>
-
-        <div class="has-text-centered" style="margin-top: 20px">
+                <b-form-group
+                label="Email"
+                label-for="email"
+                description="User email">
+                    <b-form-input type="email" v-model="email"></b-form-input>
+                </b-form-group>
+                
+                <b-form-group
+                    label="Password"
+                    label-for="password"
+                    description="User password">
+                    <b-form-input id="password" type="password" v-model="password"></b-form-input>
+                </b-form-group>
+                <b-button type="submit" variant="primary">Submit</b-button>
+            </b-form>
+            <div class="has-text-centered" style="margin-top: 20px">
             Already got an account? <nuxt-link to="/users/login">Login</nuxt-link>
           </div>
+        </b-container>            
+
+        
     </div>
 </template>
 <script>

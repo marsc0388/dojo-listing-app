@@ -1,6 +1,6 @@
 <template>
     <div>
-        <b-form @submit="upload">
+        <b-form @submit.prevent="upload">
             <b-form-group
       id="titleset"
       description="Let us know the dojo title."
@@ -47,8 +47,7 @@ export default {
 
             this.file1.metadata = await this.$axios.$get(`/api/dojos/${dojo._id}`)
             await this.$axios.post('/api/upload', this.file1);
-
-            await $router.push("/dojos/dojos");
+            await this.$router.push("/dojos/dojos");
           }
           catch(error) {
             console.log(error);
