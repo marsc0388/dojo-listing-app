@@ -14,9 +14,6 @@
     "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
-    "@nuxt/http": "^0.6.4",
-    "@nuxtjs/auth-next": "^5.0.0-1624817847.21691f1",
-    "@nuxtjs/axios": "^5.13.6",
     "bcryptjs": "^2.4.3",
     "bootstrap-vue": "^2.21.2",
     "cors": "^2.8.5",
@@ -33,7 +30,7 @@
     "multer": "^1.4.3",
     "multer-gridfs-storage": "^5.0.2",
     "net": "^1.0.2",
-    "nuxt": "^2.15.7",
+    "nuxt": "^3.0.0",
     "tls": "0.0.1"
   },
   "devDependencies": {
