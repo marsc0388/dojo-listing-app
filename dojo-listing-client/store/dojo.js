@@ -1,7 +1,9 @@
+// TODO: Convert this to a pinia store
+
 export const state = () => ({
     list: []
   })
-  
+
   export const mutations = {
     setDojos(state, dojos) {
       state.list = dojos
