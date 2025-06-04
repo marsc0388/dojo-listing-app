@@ -9,9 +9,6 @@
   </div>
 </template>
 
-<script>
-export default {}
-</script>
 <style scoped>
 .jumbotron {
   color: white;
