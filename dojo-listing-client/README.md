@@ -22,6 +22,7 @@ For detailed explanation on how things work, check out the [documentation](https
 ## Upgrade Roadmap
 - [x] Use pnpm
 - [x] Remove babel and corejs (and other redundant dependencies)
+- [ ] Replace Jest with Vitest
 - [ ] Add TypeScript
 - [ ] Add ESLint
 - [ ] Upgrade to Nuxt 3
