@@ -1,22 +1,34 @@
 <template>
   <div>
-    <b-card :title="dojo.title"
+    <Card :title="dojo.title"
       img-src="https://images.pexels.com/photos/1168940/pexels-photo-1168940.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
       img-alt="Image" img-top tag="article" style="max-width: 20rem;" class="mb-2">
-      <b-card-text>
-        {{ dojo.kanchou }}
-      </b-card-text>
-    </b-card>
+      <CardHeader>
+        <CardTitle>{{ dojo.title }}</CardTitle>
+        <CardDescription>Leader: {{ dojo.kanchou }}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p>Dojo description goes here. This is a placeholder for the dojo's description.</p>
+      </CardContent>
+      <CardFooter>
+        <nuxt-link :to="`/dojos/${dojo.id}`" class="btn btn-primary">View Dojo</nuxt-link>
+      </CardFooter>
+    </Card>
   </div>
 </template>
-<script>
-export default {
-  props: {
-    dojo: {
-      type: Object,
-      required: true,
-    }
-  },
-}
+<script setup lang="ts">
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
+import type { Dojo } from '~/types/dojo';
+
+defineProps<{
+  dojo: Dojo
+}>()
 </script>
 <style scoped></style>
