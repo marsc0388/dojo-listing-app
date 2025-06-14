@@ -1,11 +1,13 @@
 <template>
   <div>
     <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Welcome to the Dojo List</h1>
-    <p>Find a dojo to suit your needs!</p>
-  </div>
-</div>
+      <div class="container">
+        <h1 class="display-4">
+          Welcome to the Dojo List
+        </h1>
+        <p>Find a dojo to suit your needs!</p>
+      </div>
+    </div>
   </div>
 </template>
 

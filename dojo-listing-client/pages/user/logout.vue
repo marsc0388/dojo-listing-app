@@ -1,12 +1,3 @@
-<template>
-  <div>
-    <h1>Logging out</h1>
-    <hr>
-
-    <p>Please wait...</p>
-  </div>
-</template>
-
 <script setup lang="ts">
 // export default {
 //   middleware: 'auth',
@@ -23,3 +14,12 @@
 // },
 // }
 </script>
+
+<template>
+  <div>
+    <h1>Logging out</h1>
+    <hr>
+
+    <p>Please wait...</p>
+  </div>
+</template>

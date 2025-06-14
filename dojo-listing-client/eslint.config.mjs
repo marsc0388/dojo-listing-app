@@ -1,38 +1,30 @@
+import antfu from '@antfu/eslint-config'
 // import pluginVue from "eslint-plugin-vue";
-// import prettier from "eslint-plugin-prettier";
-import withNuxt from "./.nuxt/eslint.config.mjs";
-import antfu from "@antfu/eslint-config";
+import prettier from 'eslint-plugin-prettier'
+import withNuxt from './.nuxt/eslint.config.mjs'
 
 export default withNuxt(
-  ...pluginVue.configs["flat/recommended"],
+  {
+    ignores: ['.config/', 'dist/', 'tsconfig.json', './apiOld/'], // acts as global ignores, due to the absence of other properties
+  },
   antfu({
     // ...@antfu/eslint-config options
   }),
+  // Prettier config
   {
-    files: ["**/*.js", "**/*.vue", "**/*.ts"],
     languageOptions: {
       ecmaVersion: 2022,
-      sourceType: "module",
-      globals: {
-        $nuxt: "readonly",
-      },
+      sourceType: 'module',
     },
     plugins: {
-      // vue,
       prettier,
     },
-    env: {
-      node: true,
-      browser: true,
-    },
-    extends: ["eslint:recommended", "plugin:prettier/recommended"],
     rules: {
-      "vue/component-name-in-template-casing": ["error", "PascalCase"],
-      "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
-      "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
+      'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+      'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     },
     linterOptions: {
       reportUnusedDisableDirectives: true,
     },
-  }
-);
+  },
+)

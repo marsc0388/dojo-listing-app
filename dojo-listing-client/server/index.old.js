@@ -1,5 +1,5 @@
-const express = require('express')
 const consola = require('consola')
+const express = require('express')
 const { Nuxt, Builder } = require('nuxt')
 const app = express()
 
@@ -7,7 +7,7 @@ const app = express()
 const config = require('../nuxt.config')
 config.dev = process.env.NODE_ENV !== 'production'
 
-async function start () {
+async function start() {
   // Init Nuxt.js
   const nuxt = new Nuxt(config)
 
@@ -17,7 +17,8 @@ async function start () {
   if (config.dev) {
     const builder = new Builder(nuxt)
     await builder.build()
-  } else {
+  }
+  else {
     await nuxt.ready()
   }
 
@@ -28,7 +29,7 @@ async function start () {
   app.listen(port, host)
   consola.ready({
     message: `Server listening on http://${host}:${port}`,
-    badge: true
+    badge: true,
   })
 }
 start()

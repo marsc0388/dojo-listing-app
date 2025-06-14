@@ -1,3 +1,20 @@
+<script setup lang="ts">
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  navigationMenuTriggerStyle,
+} from '@/components/ui/navigation-menu'
+// import { mapGetters } from 'vuex'
+
+// export default {
+//   computed: {
+//     ...mapGetters(['isAuthenticated', 'loggedInUser'])
+//   }
+// }
+</script>
+
 <template>
   <!-- Todo make this conditional on auth value -->
   <!-- <b-navbar-nav>
@@ -32,20 +49,3 @@
     </NavigationMenuList>
   </NavigationMenu>
 </template>
-
-<script setup lang="ts">
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from '@/components/ui/navigation-menu'
-import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu';
-// import { mapGetters } from 'vuex'
-
-// export default {
-//   computed: {
-//     ...mapGetters(['isAuthenticated', 'loggedInUser'])
-//   }
-// }
-</script>

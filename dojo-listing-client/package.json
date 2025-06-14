@@ -2,6 +2,7 @@
   "name": "dojo-listing-client",
   "version": "1.0.0",
   "private": true,
+  "packageManager": "pnpm@10.11.1+sha512.e519b9f7639869dc8d5c3c5dfef73b3f091094b0a006d7317353c72b124e80e1afd429732e28705ad6bfa1ee879c1fce46c128ccebd3192101f43dd67c667912",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -9,7 +10,8 @@
     "preview": "nuxt preview",
     "test": "jest",
     "test:api": "jest --config api/jest.config.js",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "precommit": "pnpm run lint",
     "preinstall": "npx only-allow pnpm",
     "postinstall": "nuxt prepare"
@@ -62,6 +64,5 @@
     "supertest": "^6.1.6",
     "typescript": "^5.8.3",
     "vue-tsc": "^2.2.10"
-  },
-  "packageManager": "pnpm@10.11.1+sha512.e519b9f7639869dc8d5c3c5dfef73b3f091094b0a006d7317353c72b124e80e1afd429732e28705ad6bfa1ee879c1fce46c128ccebd3192101f43dd67c667912"
+  }
 }

@@ -1,5 +1,5 @@
-import { defineNuxtConfig } from "nuxt/config";
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from '@tailwindcss/vite'
+import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -7,20 +7,20 @@ export default defineNuxtConfig({
   typescript: {
     typeCheck: true,
   },
-  css: ["~/assets/css/tailwind.css"],
+  css: ['~/assets/css/tailwind.css'],
   vite: {
     plugins: [tailwindcss()],
   },
-  modules: ["@pinia/nuxt", "shadcn-nuxt", "@nuxt/eslint"],
+  modules: ['@pinia/nuxt', 'shadcn-nuxt', '@nuxt/eslint'],
   shadcn: {
     /**
      * Prefix for all the imported component
      */
-    prefix: "",
+    prefix: '',
     /**
      * Directory that the component lives in.
      * @default "./components/ui"
      */
-    componentDir: "./components/ui",
+    componentDir: './components/ui',
   },
-});
+})

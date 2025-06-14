@@ -26,4 +26,3 @@ For detailed explanation on how things work, check out the [documentation](https
 - [ ] Add TypeScript
 - [ ] Add ESLint
 - [ ] Upgrade to Nuxt 3
-

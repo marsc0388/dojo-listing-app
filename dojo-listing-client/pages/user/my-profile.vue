@@ -1,3 +1,9 @@
+<script setup lang="ts">
+// export default {
+//     middleware: 'auth',
+// }
+</script>
+
 <template>
   <div>
     <Card>
@@ -9,8 +15,12 @@
         <p>This is your profile page where you can view and manage your account details.</p>
       </CardContent>
       <CardFooter>
-        <nuxt-link to="/user/edit-profile" class="btn btn-primary">Edit Profile</nuxt-link>
-        <nuxt-link to="/user/logout">Logout</nuxt-link>
+        <nuxt-link to="/user/edit-profile" class="btn btn-primary">
+          Edit Profile
+        </nuxt-link>
+        <nuxt-link to="/user/logout">
+          Logout
+        </nuxt-link>
       </CardFooter>
     </Card>
     <!-- <b-card
@@ -35,9 +45,3 @@
     </b-card> -->
   </div>
 </template>
-
-<script setup lang="ts">
-// export default {
-//     middleware: 'auth',
-// }
-</script>

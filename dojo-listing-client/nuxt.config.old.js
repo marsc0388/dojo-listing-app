@@ -5,17 +5,17 @@ module.exports = {
   head: {
     title: 'dojo-listing-client',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -37,7 +37,7 @@ module.exports = {
   modules: [
     '@nuxtjs/axios', // enables Nuxt Axios module
     '@nuxtjs/auth-next', // enables Nuxt Auth module
-    'bootstrap-vue/nuxt'
+    'bootstrap-vue/nuxt',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -45,34 +45,34 @@ module.exports = {
   },
 
   serverMiddleware: [
-    '~/api/index.js'
+    '~/api/index.js',
   ],
 
   auth: {
     strategies: {
       local: {
         endpoints: {
-          //API endpoints
+          // API endpoints
           login: {
             url: '/api/users/login',
             method: 'post',
-            propertyName: 'token'
+            propertyName: 'token',
           },
           logout: false,
           user: {
             url: '/api/users/user',
             method: 'get',
-            propertyName: 'user'
-          }
+            propertyName: 'user',
+          },
         },
         tokenRequired: true,
-        tokenType: "Bearer"
-      }
+        tokenType: 'Bearer',
+      },
     },
     redirect: {
       login: '/user/login',
       logout: '/',
-      home: '/'
+      home: '/',
     },
     rewriteRedirects: true,
   },
