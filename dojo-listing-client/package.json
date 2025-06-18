@@ -54,8 +54,6 @@
     "@nuxt/eslint": "^1.4.1",
     "@vue/test-utils": "^1.2.1",
     "eslint": "^9.29.0",
-    "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-prettier": "^5.4.1",
     "jest": "^27.0.5",
     "mongodb-memory-server": "^7.4.4",
     "nodemon": "^2.0.13",
