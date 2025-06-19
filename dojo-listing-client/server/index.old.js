@@ -1,3 +1,4 @@
+const process = require('node:process')
 const consola = require('consola')
 const express = require('express')
 const { Nuxt, Builder } = require('nuxt')

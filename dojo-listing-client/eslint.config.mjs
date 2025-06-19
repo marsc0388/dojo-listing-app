@@ -16,6 +16,9 @@ export default withNuxt(
       semi: false,
       singleQuote: true,
     },
+    rules: {
+      'no-console': 'warn',
+    },
   }),
   {
     languageOptions: {

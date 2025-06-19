@@ -5,8 +5,8 @@ import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessa
 import { Input } from '@/components/ui/input'
 
 const errors = ref(null)
-const email = ref(null)
-const password = ref(null)
+// const email = ref(null)
+// const password = ref(null)
 // const login_error = ref(null)
 // const status = ref(false)
 

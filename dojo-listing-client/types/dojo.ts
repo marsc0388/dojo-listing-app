@@ -1,6 +1,6 @@
 import { z } from 'zod/v4'
 
-export interface Dojo {
+export interface IDojo {
   id: number
   title: string
   kanchou: string

@@ -32,9 +32,9 @@ const onSubmit = form.handleSubmit(async (values) => {
   // await axios.post('/api/dojos', values)
 })
 
-function upload() {
-  console.log('upload attempted!')
-}
+// function upload() {
+//   console.log('upload attempted!')
+// }
 // export default {
 //     middleware: 'auth',
 //     data() {
