@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { Dojo } from '~/types/dojo'
+import type { IDojo } from '~/types/dojo'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 import DojoCard from '~/components/DojoCard.vue'
 
-const dojos = ref<Dojo[]>([])
+const dojos = ref<IDojo[]>([])
 // import Dojo from "../../components/Dojo.vue"
 // export default {
 //     components: {

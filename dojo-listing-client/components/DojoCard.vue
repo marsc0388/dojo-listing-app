@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Dojo } from '~/types/dojo'
+import type { IDojo } from '~/types/dojo'
 import {
   Card,
   CardContent,
@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/card'
 
 defineProps<{
-  dojo: Dojo
+  dojo: IDojo
 }>()
 </script>
 
