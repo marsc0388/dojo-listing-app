@@ -40,7 +40,7 @@ import {
         </NuxtLink>
       </NavigationMenuItem>
       <NavigationMenuItem>
-        <NuxtLink v-slot="{ isActive, href, navigate }" to="/dojos/dojos" custom>
+        <NuxtLink v-slot="{ isActive, href, navigate }" to="/dojos" custom>
           <NavigationMenuLink :active="isActive" :href :class="navigationMenuTriggerStyle()" @click="navigate">
             Dojos
           </NavigationMenuLink>

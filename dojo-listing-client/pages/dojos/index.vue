@@ -20,7 +20,7 @@ const dojos = ref<IDojo[]>([])
 <template>
   <div>
     <h1> Dojo listing</h1>
-    <NuxtLink to="./uploadDojo" class="btn">
+    <NuxtLink to="dojos/upload" class="btn">
       Add a new dojo
     </NuxtLink>
     <DojoCard v-for="dojo in dojos" :key="dojo.id" :dojo="dojo" />
