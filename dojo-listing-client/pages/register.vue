@@ -3,6 +3,8 @@ import { Button } from '@/components/ui/button'
 import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 
+// Decided to use the composable flavor of vee-validate
+
 const errors = ref(null)
 const full_name = ref(null)
 const email = ref(null)
@@ -112,6 +114,18 @@ function onReset(event: Event) {
         </FormItem>
       </FormField>
 
+      <FormField v-slot="{ componentField }" name="password">
+        <FormItem>
+          <FormLabel for="text-password">
+            Password
+          </FormLabel>
+          <FormControl class="border border-gray-300 rounded-sm">
+            <Input v-bind="componentField" name="password" type="password" aria-describedby="password-help-block" />
+          </FormControl>
+          <FormMessage />
+        </FormItem>
+      </FormField>
+
       <!-- <b-form-group label="Password" label-for="password" description="User password">
           <b-form-input id="password" type="password" v-model="password"></b-form-input>
         </b-form-group> -->
@@ -120,7 +134,7 @@ function onReset(event: Event) {
       </Button>
     </form>
     <div class="has-text-centered" style="margin-top: 20px">
-      Already got an account? <nuxt-link to="/users/login">
+      Already got an account? <nuxt-link to="/login">
         Login
       </nuxt-link>
     </div>

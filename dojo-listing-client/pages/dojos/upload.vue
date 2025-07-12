@@ -66,6 +66,9 @@ const onSubmit = form.handleSubmit(async (values) => {
 //         }
 //     }
 // }
+definePageMeta({
+  middleware: ['authenticated'],
+})
 </script>
 
 <template>

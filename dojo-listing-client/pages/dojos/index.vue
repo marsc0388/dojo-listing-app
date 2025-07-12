@@ -15,6 +15,9 @@ const dojos = ref<IDojo[]>([])
 //             return {dojos};
 //         }
 // }
+definePageMeta({
+  middleware: ['authenticated'],
+})
 </script>
 
 <template>
