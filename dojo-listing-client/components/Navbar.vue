@@ -13,6 +13,7 @@ import {
 //     ...mapGetters(['isAuthenticated', 'loggedInUser'])
 //   }
 // }
+const { loggedIn } = useUserSession()
 </script>
 
 <template>
@@ -43,6 +44,20 @@ import {
         <NuxtLink v-slot="{ isActive, href, navigate }" to="/dojos" custom>
           <NavigationMenuLink :active="isActive" :href :class="navigationMenuTriggerStyle()" @click="navigate">
             Dojos
+          </NavigationMenuLink>
+        </NuxtLink>
+      </NavigationMenuItem>
+      <NavigationMenuItem v-if="loggedIn">
+        <NuxtLink v-slot="{ isActive, href, navigate }" to="/logout" custom>
+          <NavigationMenuLink :active="isActive" :href :class="navigationMenuTriggerStyle()" @click="navigate">
+            Logout
+          </NavigationMenuLink>
+        </NuxtLink>
+      </NavigationMenuItem>
+      <NavigationMenuItem v-else>
+        <NuxtLink v-slot="{ isActive, href, navigate }" to="/login" custom>
+          <NavigationMenuLink :active="isActive" :href :class="navigationMenuTriggerStyle()" @click="navigate">
+            Login
           </NavigationMenuLink>
         </NuxtLink>
       </NavigationMenuItem>

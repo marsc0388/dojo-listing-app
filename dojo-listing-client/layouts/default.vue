@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import Navbar from '@/components/Navbar.vue'
-
-// export default { components: { Navbar }}
 </script>
 
 <template>
-  <!-- TODO, this is not using Nuxt 3 structure -->
   <div>
     <Navbar />
-    <slot />
+    <main class="container mx-auto px-4 py-8">
+      <slot />
+    </main>
   </div>
 </template>
